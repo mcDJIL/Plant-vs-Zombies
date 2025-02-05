@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #572812;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.welcome-container {
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-screen {
+    display: flex;
+    gap: 50px;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-logo {
+    margin-bottom: 25px;
+}
+
+.game-logo img {
+    width: 330px;
+}
+
+.input {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    background-color: #271107;
+    border: 3px solid #a1522d;
+    color: #fff;
+    border-radius: 8px;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button:first-child {
+    background-color: #058305;
+    border: none;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-group button:first-child:disabled {
+    background-color: #3eb93e;
+    color: #ddd;
+    cursor: not-allowed;
+}
+
+.button-group button:first-child img {
+    width: 30px;
+}
+
+.button-group button:last-child {
+    background-color: rgb(216, 231, 6);
+    border: none;
+    color: #a1522d;
+    padding: 6px 18px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.game-instructions {
+    padding: 10px 10px 10px 30px;
+    background-color: #3f1c0b;
+    color: #fff;
+    width: 500px;
+}
+
+.close {
+    float: right;
+}
+
+.close img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.game-instructions h2 {
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.game-container {
+    display: flex;
+}
+
+.leaderboard-screen {
+    width: 250px;
+    padding: 30px 20px;
+    color: #fff;
+    background-color: #572812;
+}
+
+.leaderboard-screen h2 {
+    font-weight: 700;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.leaderboard-screen select {
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.leaderboard-user {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.leaderboard-user p:first-child {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.leaderboard-user p:last-child {
+    font-style: italic;
+}
+
+.leaderboard-user button {
+    background-color: yellow;
+    color: #572812;
+    border: none;
+    padding: 12px ;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.game-screen {
+    position: relative;
+}
+
+#total-sun {
+    position: absolute;
+    left: 16.6%;
+    top: 11.5%;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.plant-card img {
+    width: 55px;
+}
+
+.plant-card {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.plant-card.disabled {
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+.seeds {
+    position: absolute;
+    left: 25%;
+    top: 2.8%;
+}
+
+.game-stats {
+    color: #fff;
+    position: absolute;
+    left: 56%;
+    top: 2.8%;
+}
+
+.game-stats p {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.shovel {
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    left: 80%;
+    top: 1.5%;
+}
+
+.shovel img {
+    width: 70px;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKS - Plant vs Zombies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/Sprites/General/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-container">
+            <div class="welcome-screen">
+                <div class="welcome">
+                    <div class="game-logo">
+                        <img src="./assets/Sprites/General/logo.png" alt="">
+                    </div>
+
+                    <div class="input">
+                        <input placeholder="Input Username" type="text" name="" id="input-player">
+                    </div>
+
+                    <div class="input">
+                        <select id="select-level">
+                            <option selected>Select Level</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="play-game">
+                            <img src="./assets/Sprites/General/Shovel.png" alt=""> Play Game
+                        </button>
+
+                        <button id="btn-instruction">Instruction</button>
+                    </div>
+                </div>
+
+                <div class="game-instructions">
+                    <div class="close">
+                        <img id="close-instruction" src="./assets/Sprites/General/close-icon.png" alt="">
+                    </div>
+
+                    <h2>How to play game</h2>
+                    <ol>
+                        <li>Input Username</li>
+                        <li>Take the sun to choose the plant card</li>
+                        <li>Put a plant cards into the field to fight zombies</li>
+                        <li>Don't let zombies pass through the yard</li>
+                        <li>Enjoy!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="game-screen">
+                <span id="total-sun">10</span>
+                
+                <div class="seeds">
+                    <button class="plant-card">
+                        <img src="./assets/Sprites/Seeds/SunFlowerSeed.png" alt="">
+                    </button>
+                    <button class="plant-card">
+                        <img src="./assets/Sprites/Seeds/WallNutSeed.png" alt="">
+                    </button>
+                    <button class="plant-card disabled">
+                        <img src="./assets/Sprites/Seeds/PeaShooterSeed.png" alt="">
+                    </button>
+                    <button class="plant-card">
+                        <img src="./assets/Sprites/Seeds/IcePeaSeed.png" alt="">
+                    </button>
+                </div>
+
+                <div class="game-stats">
+                    <p id="game-player">mcDJIL</p>
+                    <p>Score : <span id="game-score">100</span></p>
+                    <p>Time : <span id="game-time">00:00</span></p>
+                </div>
+
+                <button class="shovel">
+                    <img src="./assets/Sprites/General/Shovel.png" alt="">
+                </button>
+
+                <canvas id="canvas" width="1000" height="700"></canvas>
+            </div>
+
+            <div class="leaderboard-screen">
+                <h2>LEADERBOARD</h2>
+                <select id="sort-leaderboard">
+                    <option value="score">Sort By Score</option>
+                    <option value="name">Sort By Name</option>
+                    <option value="latest">Sort By Latest Game</option>
+                </select>
+
+                <div class="leaderboard">
+                    <div class="leaderboard-content">
+                        <div class="leaderboard-user">
+                            <div class="">
+                                <p id="leaderboard-name">Thomas Galih</p>
+                                <p>Score : <span id="leaderboard-name">50</span></p>
+                            </div>
+        
+                            <div class="">
+                                <button id="detail-leaderboard">Detail</button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $('.welcome-container').show();
+        $('.game-container').hide();
+        $('.game-instructions').hide();
+        
+        $('#play-game').on('click', () => {
+            $('.game-container').show();
+            $('.welcome-container').hide();
+            $('body').css('background-color', '#fff');
+        });
+
+        $('#btn-instruction').on('click', () => {
+            $('.game-instructions').show();
+        });
+        
+        $('#close-instruction').on('click', () => {
+            $('.game-instructions').hide();
+        });
+
+        if ($('#input-player').val() == '') {
+            $('#play-game').prop('disabled', true)
+        }
+        
+        $('#input-player').on('input', () => {
+            if ($('#input-player').val() == '') {
+                $('#play-game').prop('disabled', true)
+            } else {
+                $('#play-game').prop('disabled', false)
+            }
+        })
+
+    </script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
